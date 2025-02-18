@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+
+@theme {
+    --color-bee-yellow: #F7DA21;
+    --color-gray: #E7E7E7;
+    --color-gray-mid: #DCDCDC;
+    --color-gray-darker: #959595;
+
+}
+
+body {
+    font-family: "Libre Franklin", serif;
+    color: #18181B;
+}
+
+
+.current-guess {
+    position: relative;
+}
+
+.current-guess::after {
+    position: absolute;
+    top: 0;
+    content: "";
+    display: block;
+    width: 2px;
+    height: 36px;
+    background-color: var(--color-bee-yellow);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 100%;
+    }
+
+
+
+}
+
+.disappearing {
+    animation: closing .3s forwards;
+}
+
+@keyframes closing {
+    from {
+        opacity: 100%;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.appearing {
+    animation: appearing .3s forwards;
+}
+
+@keyframes appearing {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+.shake {
+    animation: shake .5s ease-in-out;
+}
+
+@keyframes shake {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-7px);
+    }
+
+    50% {
+        transform: translateX(7px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+
+}
